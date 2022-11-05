@@ -10,7 +10,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class ClienteEdicaoComponent implements OnInit {
 
-  cliente: Cliente = {};
+  cliente= new Cliente();
 
   constructor(private clienteService: ClienteService,
               private route: ActivatedRoute,

@@ -1,9 +1,9 @@
 export class PaginatorHelper {
 
   constructor(
-    public size = 1,
+    public size = 2,
     public page = 0,
-    public sort = 'id,DESC'
+    public sort = 'id,ASC'
     ) {
   }
 }

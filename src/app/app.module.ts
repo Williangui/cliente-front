@@ -19,6 +19,8 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatPaginator, MatPaginatorModule} from "@angular/material/paginator";
 import {MatTableModule} from "@angular/material/table";
 import {NgxPaginationModule} from "ngx-pagination";
+import {AgmCoreModule} from "@agm/core";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -42,7 +44,11 @@ import {NgxPaginationModule} from "ngx-pagination";
     FormsModule,
     MatPaginatorModule,
     MatTableModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAABIiAZ_ZKqGl5pM36DZdGFPQk-CvC1N0'
+    }),
+    MatButtonModule
   ],
   providers: [
     ClienteFiltros,

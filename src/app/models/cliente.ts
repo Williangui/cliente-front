@@ -1,6 +1,6 @@
 export class Cliente {
   id?: string;
   nome?: string;
-  latitude?: string;
-  longitude?: string;
+  latitude: number = 0;
+  longitude: number = 0;
 }

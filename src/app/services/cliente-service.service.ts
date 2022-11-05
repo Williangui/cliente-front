@@ -33,4 +33,9 @@ export class ClienteService {
     const url = this.baseUrl + '/salvar';
     return this.httpClient.post<Cliente>(url, cliente);
   }
+
+  excluir(id: any): Observable<void> {
+    const url = this.baseUrl + `/excluir/${id}`;
+    return this.httpClient.delete<void>(url);
+  }
 }

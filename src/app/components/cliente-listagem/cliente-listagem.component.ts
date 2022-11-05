@@ -20,11 +20,10 @@ export class ClienteListagemComponent implements OnInit {
   qtdPaginas = 0;
   pagina = 0;
   tamanhosPagina: number[] = [5, 10, 25, 100];
-  sort = 'id,ASC';
   dataSource: any;
   paginatorHelper = new PaginatorHelper();
 
-  colunas: string[] = ["id", "nome", "latitude", "longitude"];
+  colunas: string[] = ["id", "nome", "latitude", "longitude", "acoes"];
 
   constructor(
     private router: Router,
@@ -53,7 +52,6 @@ export class ClienteListagemComponent implements OnInit {
     console.log(event);
     this.paginatorHelper.size = event.pageSize;
     this.paginatorHelper.page = event.pageIndex;
-    this.paginatorHelper.sort = this.sort;
     this.listar();
   }
 
@@ -64,5 +62,17 @@ export class ClienteListagemComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  public editar(id: number) {
+    this.router.navigate(['edicao/' + id]);
+  }
+
+  public excluir(cliente: Cliente) {
+    this.service.excluir(cliente.id).subscribe((resposta) => {
+      if (resposta == null) {
+        this.listar();
+      }
+    });
   }
 }
