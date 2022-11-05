@@ -1,0 +1,30 @@
+<form class="example-form">
+
+  <table class="example-full-width">
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Nome</mat-label>
+          <input [(ngModel)]="cliente.nome" name="cliente.nome" matInput>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Latitude</mat-label>
+          <input [(ngModel)]="cliente.latitude" name="cliente.latitude" matInput>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Longitude</mat-label>
+          <input [(ngModel)]="cliente.longitude" name="cliente.longitude" matInput>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <div class="buttons">
+    <button (click)="salvar()" mat-stroked-button color="primary">Criar</button>
+    <button (click)="cancelar()" mat-stroked-button color="warn">Cancelar</button>
+  </div>
+</form>
