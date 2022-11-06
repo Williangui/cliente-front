@@ -11,21 +11,28 @@
       <td>
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Latitude</mat-label>
-          <input [(ngModel)]="cliente.latitude" name="cliente.latitude" matInput>
+          <input [(ngModel)]="cliente.latitude" name="cliente.latitude" matInput (change)="recentralizarMapa()">
         </mat-form-field>
       </td>
       <td>
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Longitude</mat-label>
-          <input [(ngModel)]="cliente.longitude" name="cliente.longitude" matInput>
+          <input [(ngModel)]="cliente.longitude" name="cliente.longitude" matInput (change)="recentralizarMapa()">
         </mat-form-field>
       </td>
     </tr>
   </table>
 
-  <agm-map [latitude]="cliente.latitude" [longitude]="cliente.longitude">
-    <agm-marker [latitude]="cliente.latitude" [longitude]="cliente.longitude"></agm-marker>
-  </agm-map>
+  <div #map>
+    <agm-map [style.height.px]="map.offsetHeight"
+             [zoom]="4"
+             [latitude]="lat"
+             [longitude]="lng"
+             [usePanning]="true">
+      <agm-marker [latitude]="cliente.latitude" [longitude]="cliente.longitude" [agmFitBounds]="true"></agm-marker>
+    </agm-map>
+  </div>
+
 
   <div class="buttons">
     <button (click)="salvar()" mat-stroked-button color="primary">Criar</button>

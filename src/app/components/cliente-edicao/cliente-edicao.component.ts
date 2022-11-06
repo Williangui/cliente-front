@@ -10,7 +10,10 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class ClienteEdicaoComponent implements OnInit {
 
-  cliente= new Cliente();
+  cliente = new Cliente();
+  lat = -16.697406;
+  lng = -49.257813
+  map = null;
 
   constructor(private clienteService: ClienteService,
               private route: ActivatedRoute,
@@ -23,19 +26,24 @@ export class ClienteEdicaoComponent implements OnInit {
   }
 
   public buscarPorId() {
-    console.log(this.cliente);
     if (this.cliente.id) {
       this.clienteService.buscarPorId(this.cliente.id).subscribe((data) => {
         this.cliente = data;
+        this.recentralizarMapa();
       });
-      console.log(this.cliente);
     }
+  }
+
+  public recentralizarMapa() {
+    this.lat = this.cliente.latitude;
+    this.lng = this.cliente.longitude;
   }
 
   public salvar() {
     this.clienteService.salvar(this.cliente).subscribe((data) => {
       this.cliente = data;
       this.router.navigate(['']);
+      this.recentralizarMapa()
     });
   }
 
