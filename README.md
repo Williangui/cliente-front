@@ -1,27 +1,57 @@
-# ClienteFront
+# Projeto Para cadastro de clientes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.11.
+Este projeto é um exemplo de uma aplicação Spring Boot que utiliza Docker para o ambiente de desenvolvimento e execução. Ele inclui uma configuração do Docker Compose para o banco de dados PostgreSQL e um Dockerfile para empacotar a aplicação Spring Boot.
 
-## Development server
+## Pré-requisitos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Certifique-se de ter as seguintes ferramentas instaladas em seu ambiente de desenvolvimento:
 
-## Code scaffolding
+- Docker instalado
+- Node.js 18.16.0 >  instalado
+- Angular CLI 13.0.0 instalado
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Configuração e Execução
 
-## Build
+### Utilizando Docker Compose
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+1. Execute o docker na sua maquina;
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Abra o terminal na pasta do projeto;
 
-## Running end-to-end tests
+3. No terminal, execute o Docker Compose para criar e iniciar os containers:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+   ```bash
+   docker-compose up
+   ```
 
-## Further help
+4. A aplicação estará disponível em `http://localhost:4200`.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+5. Para encerrar a execução dos containers, pressione `Ctrl + C` no terminal e execute:
+
+   ```bash
+   docker-compose down
+   ```
+
+### Subindo a aplicação usando o Angular CLI:
+
+1. Abra o terminal na pasta do projeto.
+
+2. Execute o comando npm install.
+
+3. Execute o comando ng serve.
+
+4. A aplicação estará disponível em `http://localhost:4200`.
+
+### Comandos úteis:
+
+  ng serve: Inicia a aplicação Angular em modo de desenvolvimento.
+  docker-compose up -d: Inicia o container da aplicação em segundo plano.
+  docker ps: Lista os containers em execução.
+  docker logs app: Mostra os logs da aplicação em execução no container.
+  docker stop app: Para o container da aplicação.
+  docker rm app: Remove o container da aplicação.
+
+## Configurações Adicionais
+
+Para configurar parâmetros adicionais, como variáveis de ambiente, consulte o arquivo `docker-compose.yml` e o arquivo `Dockerfile` no diretório raiz do projeto.

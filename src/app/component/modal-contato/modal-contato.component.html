@@ -1,0 +1,29 @@
+<mat-card>
+    <h4 style="text-align: left">Contato</h4>
+    <form [formGroup]="formGroup">
+        <div class="row" style="display: flex; margin-left: 20px">
+            <mat-form-field appearance="fill" style="width: 10%">
+                <mat-label>Código</mat-label>
+                <input matInput formControlName="id">
+            </mat-form-field>
+            <mat-form-field appearance="standard" style="width: 80%; margin-left: 20px">
+                <mat-label>Telefone</mat-label>
+                <input formControlName="telefone" type="text" matInput width="300px">
+            </mat-form-field>
+        </div>
+    </form>
+    <div class="row" style="text-align: center">
+        <button mat-button class="button-pesquisa" (click)="salvar()" color="primary" [disabled]="!formGroup.valid">
+            <i class="far fa-check"></i>
+            Salvar
+        </button>
+        <button mat-button class="button-listar" (click)="limpar()" color="warn">
+            <i class="fas fa-eraser"></i>
+            Limpar
+        </button>
+        <button mat-button class="button-listar" (click)="cancelar()" color="warn">
+            <i class="far fa-ban"></i>
+            Cancelar
+        </button>
+    </div>
+</mat-card>

@@ -1,0 +1,42 @@
+{
+  "clientes": [
+    {
+      "id": 1,
+      "nome": "João Silva",
+      "endereco": "Rua das Flores, 123",
+      "bairro": "Centro",
+      "contatos": [
+        {
+          "id": 1,
+          "telefone": "1112345678",
+          "idCliente": 1
+        },
+        {
+          "id": 2,
+          "telefone": "1198765432",
+          "idCliente": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nome": "Maria Oliveira",
+      "endereco": "Rua da Paz, 456",
+      "bairro": "Jardim Europa",
+      "contatos": [
+        {
+          "id": 3,
+          "telefone": "1212345678",
+          "idCliente": 2
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nome": "Pedro Souza",
+      "endereco": "Avenida Brasil, 789",
+      "bairro": "Vila Nova",
+      "contatos": []
+    }
+  ]
+}
